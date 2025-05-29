@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt function</title>
+    </head>
+
+    <body>
+        <h1>How to get data from prompt() function</h1>
+        Name : <i id="result"></i>
+        <br>
+        <button onclick="call()">Call</button>
+    </body>
+    <script>
+        function call() {
+            let name = prompt("Enter your name!", "");  //first value for the label , 2nd value for input field default value
+            // document.write(name);
+            document.getElementById('result').innerHTML = name;
+        }
+        // let name = prompt("Enter your name!", "");  //first value for the label , 2nd value for input field default value
+        // document.write(name);
+    </script>
+
+</html>

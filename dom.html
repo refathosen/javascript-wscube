@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM</title>
+    </head>
+
+    <body>
+        <!-- <div id="main">
+            <h1>
+                Welcome to WsCube Tech
+            </h1>
+        </div> -->
+        <div id="main">
+            Welcome to WsCube Tech
+        </div>
+        <div class="old">
+            Javascript is love.
+        </div>
+        <div class="old">
+            Javascript is good.
+        </div>
+    </body>
+    <script>
+        // GET DATA by id
+        // var x = document.getElementById("main").innerHTML; // document.getElementById("main") will take the whole div and .innerHTML will take the data inside the div
+        // console.log(x); // FINAL OUTPUT : Welcome to WsCube Tech
+
+
+        // PUT DATA by id
+        // document.getElementById("main").innerHTML = "<h1>Js new course</h1>"; // this will replace the data inside the main id div
+
+        // GET DATA WITH CLASS
+        // var x = document.getElementsByClassName("old")[0].innerHTML; //[0] means the 0th key , it means the 1st div
+        // var y = document.getElementsByClassName("old")[1].innerHTML; //[1] means the 1th key , it means the 2nd div
+        // console.log(x);
+        document.getElementsByClassName("old")[1].innerHTML = "Hello world";
+        alert(y);
+    </script>
+
+</html>

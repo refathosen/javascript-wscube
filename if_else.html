@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conditional Statement</title>
+    </head>
+
+    <body>
+        <div style="background-color: cadetblue; margin-bottom: 20px;">
+            <h1>Checking if-else conditions</h1>
+            <h3>Check if you can vote or not</h3>
+            <input type="number" name="age" id="age">
+            <button onclick="check()">Check</button>
+            <br>
+            <input type="text" id="result" readonly>
+        </div>
+        <div style="background-color: burlywood;">
+            <input type="text" id="role">
+            <button onclick="auth()">Give your role</button>
+            <h2 id="login" style="background-color: chartreuse; color: red;">
+
+            </h2>
+        </div>
+
+    </body>
+    <script>
+        function check() {
+            let age = document.getElementById('age').value;
+            // let age = prompt("Enter your age", "");
+            // alert(age);
+            if (age >= 18 && age <= 80) {
+                document.getElementById('result').value = "You can vote!";
+                // alert('You can vote!');
+            } else {
+                document.getElementById('result').value = "You can not vote";
+                // alert('You can not vote!');
+            }
+        }
+
+        function auth() {
+            let role = document.getElementById('role').value;
+            let admin = "You are a ADMIN. You can login";
+            let user = "You are a USER. You can login";
+            if (role == 'admin') {
+                document.getElementById('login').innerHTML = admin;
+            } else if (role == 'user') {
+                document.getElementById('login').innerHTML = user;
+            } else {
+                document.getElementById('login').innerHTML = "You can not login. Register first!";
+            }
+        }
+    </script>
+
+</html>

@@ -1,0 +1,558 @@
+Note: Javascript is a high level interpreted , client-side, event-based,object-oriented programming language.
+i. high level language = easy to understand by human
+ii. programming language = the language of computer
+iii. Javascript program runs on browser, that's why it's called client side language
+iv. Javascript is a case-sensitive language
+v. Javascript can dynamically modify an html page without reload
+vi. Javascript can validate user input
+vii. Javascript can be used to create cookies
+
+
+*** How to use internal Javascript, this script is in the same page ==>
+<script>Js codes</script>
+
+*** How to use external Javascript ==>
+<script src="myscript.js"></script>  //this myscript.js is another file which have js codes
+
+
+***** Important functions of Javascript ==>
+1. alert("PARAMETER")      
+<script>
+alert("GIVEN PARAMETER");   // It is used to alert the user that something is happened and open a pop-up.
+</script>
+
+
+2. confirm("PARAMETER")   
+//  Opens up a Confirm/Cancel dialogue/pop-up  and returns true or false depending on users click
+
+
+3. console.log("PARAMETER") 
+//Writes information to the browser console, good for debugging purpose
+
+
+4. document.right("PARAMETER")         
+//Write directly to the HTML document, it will write something in the html page
+
+
+5. prompt(msg,default)  
+//Creates a pop-up for user input
+// here msg is the label of the pop-up input field and default is the  default value of the input field , which can be change  
+
+
+******************START PRACTICAL IMPLEMENTATION OF JS*******************
+
+
+*******************STEP 1: add the script tag after body tag******************
+
+*comments in js //
+
+
+*******************************STEP 2: VARIABLES IN Javascript**************************
+
+1.What is Variables in js?
+i.Variables are container , which holds reusable data
+
+2.How to declare and and initialize variable in js?
+*variable should start with a-z,A-Z,_,  but can not be start with a number
+*variables are case sensitive = demo,Demo,DeMo all are different Variables
+* var name; //variable declaration
+    name = "Refat"; // value assign
+    name = "WsCube"; //overwrite the variable , now the value of name is this
+    alert(name);
+* var name = "Refat";
+var _test = "testing";
+console.log(name);
+
+
+
+3.Scope and lifetime of variable?
+
+SCOPE of variable:: scope means where it can be used
+*Variable declared within a function are local to that function 
+*Variable declared outside of any functions are global functions
+
+LIFETIME of variable::
+*local variables lifetime is within the block of it's declaration
+*Global variables lifetime is throughout the program
+
+
+**********************STEP 3:: JAVASCRIPT DOM FUNCTIONS ***********************
+***** DOM = DOCUMENT OBJECT METHOD
+document = full page 
+elements = html elements , div 
+
+*****the main reason is how can we get the data of the element or how can we insert data into the element*****
+
+*** document.getElementById()
+here we can get the element by the id of the div/element
+example:
+<div id="raadu">
+
+</div>
+
+<script>
+let ifraad =  document.getElementById("raadu").innerHTML ; //get data
+console.log("ifraad");
+document.getElementById("raadu").innerHTML = "<h1>Ifraad is a good boy.</h1>"; //put data
+</script>
+
+
+
+*** document.getElementsByClassName()
+here we can get the elements by the class of those div/element
+
+
+*** inner.HTML()
+
+
+
+***  HOW TO GET DATA :: BY ID
+
+*   <div id="main">
+            Welcome to WsCube Tech
+    </div>
+    <script>
+        var x = document.getElementById("main").innerHTML; 
+       // (1) document.getElementById("main") will take the whole div and 
+       // (2) .innerHTML will take the data inside the div
+        console.log(x); 
+        // FINAL OUTPUT : Welcome to WsCube Tech
+    </script>
+
+*   <div id="second">
+            <h1>
+            Welcome to WsCube Tech
+            </h1>
+        </div>
+
+    <script>
+        var x = document.getElementById("second").innerHTML; 
+       // (1) document.getElementById("second") will take the whole div and 
+       // (2) .innerHTML will take the data inside the div
+        console.log(x); 
+        // FINAL OUTPUT :
+            <h1>
+            Welcome to WsCube Tech
+            </h1>
+    </script>
+
+*** HOW TO PUT DATA :: BY ID
+
+*   <div id="main">
+            Welcome to WsCube Tech
+    </div>
+    <script>
+    document.getElementById("main).innerHTML = "<h1>Welcome to our new js journey</h1>" ; // this will replace the data inside the id
+    </script>
+*
+*
+*
+
+*** HOW TO GET DATA :: BY class
+
+*   <div class="old">
+    Javascript is good.
+    </div>
+*   <div class="old">
+    JAVASCRIPT is love
+    </div>
+    <script>
+    var x = document.getElementsByClassName("old");
+    console.log(x);
+
+    // GET DATA WITH CLASS
+    var x = document.getElementsByClassName("old")[0].innerHTML; //[0] means the 0th key , it means the 1st div
+    var y = document.getElementsByClassName("old")[1].innerHTML; //[1] means the 1th key , it means the 2nd div
+    console.log(x);
+    alert(y);
+    </script>
+
+*** HOW TO PUT DATA :: BY CLASS
+    document.getElementsByClassName("old")[1].innerHTML = "Hello world";
+
+
+************************************STEP 4: STRING CONCATENATION***********************************
+
+*STRING DATATYPE :: alphabet values exp:: "hello", "everyone"  etc.......
+
+***USE [ + ] FOR STRING CONCATENATION
+
+<script>
+let firstName = "Refat";
+let lastName = "Utsab"
+
+let fullName = firstName + "" + lastName;
+alert(fullName);
+
+
+let hisFirstName = "Ifraad";
+let hisLastName = "Hosen";
+let hisFullName = hisFirstName + " " + hisLastName;
+console.log(hisFullName);
+
+
+let X = "Refat";
+let Y = "Utsab";
+
+let Z = firstName + lastName + " " + "Ws Cube Tech";
+console.log(Z);
+
+let a = "Software" + " " + "Development";
+prompt("Tell me about your passion", a);
+
+
+***********V.V.I**********
+let z = "3" + "3";
+let f = "5" + "5";
+console.log(f); //output:: 55
+console.log(z);  //Output = 33; because for "" this , js this it is string , so js concatenate and return 33
+</script>
+
+
+
+**************************************STEP 5:: OPERATORS******************************************
+***What is an operator ?
+==> An operator is a symbol that tell the compiler which arithmetic or logical operation to be performed between the respective operands.
+==> in easy language:: it will do operations between two operands
+
+***Types of OPERATORS in js ?
+1. Arithmetic operators[addition (+), subtraction (-), multiplication (*), division (/), modulus (%), and even exponentiation (**). You can also increment (++) or decrement (--) a value.]
+2.Logical operators[&& means "and", || means "or", and ! means "not". ]
+3.Ternary operators[condition ? value_if_true : value_if_false]
+4.Assignment operators[=,+=, -=, *=, and /=]
+5.Comparison operators[Comparison operators/relational operators help you compare values and return a boolean (true or false). Examples include == for equal, != for not equal, === for strict equality (both value and type), and !== for strict inequality. You can also use <, >, <=, and >= to compare numbers.]
+
+
+
+**************************************STEP 6::ARITHMETIC OPERATORS IN JS******************************************
+
+1. Arithmetic operators::
+    [addition (+), subtraction (-), multiplication (*),
+    division (/), modulus (%), and even exponentiation (**).
+    You can also increment (++) or decrement (--) a value.]
+
+    X + Y = Addition
+    X - Y = Subtraction
+    X * Y = Multiplication
+    X / Y = Division 
+    X % Y = Modulus ==> Output :: the remainder of an integer division [vagsesh]
+    X++  =  X + 1
+    X-- =   X - 1
+
+
+
+**************************************STEP 7::Comparison operators/relational operators OPERATORS IN JS******************************************
+Comparison operators[Comparison operators/relational operators help you compare values and return a boolean (true or false). 
+Examples include 
+== for equal, 
+!= for not equal, 
+=== for strict equality (both value and type), and 
+!== for strict inequality. 
+You can also use
+ <, >, <=, and >= 
+ to compare numbers.]
+
+
+**************************************STEP 7::Logical and Ternary Operators OPERATORS IN JS******************************************
+
+***Logical operators[
+    
+&& means "Logical AND", example:: (X && Y)
+|| means "Logical OR",  example:: (X || Y)
+! means "not". example:: (X != Y)
+]
+
+    <body>
+        <h1 id="res" style="margin: 50px auto; width: 300px;">
+
+        </h1>
+        <h1 id="res-2" style="margin: 50px auto; width: 300px;">
+
+        </h1>
+        <h1 id="res-3" style="margin: 50px auto; width: 300px;">
+
+        </h1>
+    </body>
+    <script>
+        let x = false;  // false = 0 [binary]
+        let y = true;   // true = 1
+        let a = x && y;
+        let o = x || y;
+        let t = x && y ? 'this is the true value' : 'this is the false value';
+        document.getElementById('res').innerHTML = a;
+        document.getElementById('res-2').innerHTML = o;
+        document.getElementById('res-3').innerHTML = t;
+    </script>
+
+***Ternary operators[condition ? value_if_true : value_if_false]
+
+
+
+**************************************STEP 7::Assignment Operators OPERATORS IN JS******************************************4
+
+***Assignment operators[
+
+// If we do not need the previous valu of a variable, the we can use these assignment variables
+
+=, [Simple Assignment]                  // C = 5;
++=, [Add and Simple Assignment]         // C += A , it means C = C + A; first it will do C + A then put the value again in C
+-=, [Subtract and Simple Assignment]    // C -= A , it means C = C - A;
+*=, [Multiply and Simple Assignment]    // C *= A , it means C = C * A;
+/=, [Divide and Simple Assignment]      // C /= A , it means C = C / A;
+%=, [Modulus and Simple Assignment]     // C %= A , it means C = C % A;
+
+
+]
+
+*it is used to assign 
+
+
+
+**************************************STEP 8: FUNCTIONS IN Javascript*************************************
+*** Functions are group of code or program, which is used more often
+***It leads programming to code reusability and clean code
+
+**********Var , Let, Const details:
+
+var
+The var keyword is the original way to declare variables in JavaScript, 
+available since its inception. Variables declared with var are function-scoped, 
+meaning they are accessible throughout the function in which they are defined. 
+If declared outside a function, they become global. One of the quirks of var is that it is hoisted—moved
+to the top of its scope during compilation—and initialized with undefined. 
+This means you can reference a var-declared variable before its actual declaration without throwing an error, 
+although the value will be undefined until the assignment occurs. 
+This behavior can cause subtle bugs and confusion, which is why modern JavaScript tends to avoid var in favor of let or const.
+
+let
+Introduced in ES6 (ECMAScript 2015), let allows for block-scoped variable declarations,
+meaning the variable is only accessible within the nearest enclosing {} (block). 
+Unlike var, let is hoisted but not initialized—this leads to the temporal dead zone (TDZ),
+where accessing the variable before its declaration results in a ReferenceError. 
+let also prevents re-declaration of the same variable within the same scope, 
+making it safer and more predictable than var. It is commonly used when you expect a variable’s 
+value to change during the lifecycle of your program.
+
+const
+Also introduced in ES6, const is similar to let in that it is block-scoped and respects the temporal dead zone,
+but it adds an important restriction: once a const variable is assigned a value, it cannot be reassigned.
+This makes const ideal for declaring variables that should never change—such as configuration values or fixed references. 
+However, const does not make the value immutable if it’s an object or array; the properties or elements can still be modified. 
+It only ensures that the variable identifier cannot be reassigned to a different value or object.
+
+
+***** FUNCTIONS ARE 2 Types
+
+1. PRE DEFINED FUNCTIONS => such functions are defined at the time of making of any language. 
+EXP:: alert(), console.log(), prompt(),
+
+
+
+2. USER DEFINED FUNCTIONS => such functions are defined by users according to their needs.
+EXP:: 
+
+
+
+***********SYNTAX OF FUNCTIONS
+***first call a function , give it a name
+
+function functionNAME(){
+    //function body
+}
+
+
+function functionName(a,b){
+    //function body
+}
+
+// when can call function with parameter or without parameter , all depend on needs
+
+// here a,b are Parameter/Arguments. there are the inputs that the function will manipulate. 
+separate multiple inputs with comma(,)
+
+**WHEN WE CALL A FUNCTION IT WILL RETURN something from the function body
+
+
+
+******************************CALLING USER DEFINED FUNCTION ON CLICK EVENT********************************
+***   <!-- onclick is a event -->
+*** to get the value of an input field , need to use (.value) after document.getElementById('name')
+*** let name = document.getElementById('name').value;
+
+
+    <body>
+        <h3>Calling user defined function on click event</h3>
+        <input type="text" name="name" id="name">
+        <button onclick="greet()">Greet</button>
+        <!-- onclick is a event -->
+    </body>
+    <script>
+        function greet() {
+            let name = document.getElementById('name').value;
+            let greet = "Hello" + " " + name;
+            alert(greet);
+        }
+    </script>
+
+
+**************************************STEP 9: SIMPLE CALCULATOR USING JAVASCRIPT*************************************
+
+******** parseInt() function will convert the string to a integer
+*** when i insert a number from input field , javascript will take the value as STRING , 
+    that's why we need to use parseInt() to convert that value into integer, there is also parseFloat() function
+
+<body>
+        <input type="number" name="first" id="first" step="any" />
+        <select name="" id="ope">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">x</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" name="second" id="second" step="any" />
+        <!-- by using any we can also input decimal numbers -->
+        <br>
+        <button onclick="cal()">Calculate</button>
+        <input type="text" id="res" readonly>
+    </body>
+
+    <script>
+        function cal() {
+            let opr1 = document.getElementById('first').value;
+            let opr2 = document.getElementById('second').value;
+            let ope = document.getElementById('ope').value;
+            // alert(opr1);
+            // alert(opr2);
+            // alert(ope);
+            if (ope == '+') {
+                var result = parseInt(opr1) + parseInt(opr2); //*** parseInt will convert the string to a integer
+            }
+            else if (ope == '-') {
+                var result = parseInt(opr1) - parseInt(opr2);
+            }
+            else if (ope == '*') {
+                var result = parseInt(opr1) * parseInt(opr2);
+            }
+            else if (ope == '/') {
+                var result = parseInt(opr1) / parseInt(opr2);
+            }
+            // alert(result);
+            document.getElementById('res').value = result;
+
+        }
+    </script>
+
+
+
+
+**************************************STEP 10: HOW TO GET DATA USING PROMPT FUNCTION*************************************
+
+    <body>
+        <h1>How to get data from prompt() function</h1>
+        Name : <i id="result"></i>
+        <br>
+        <button onclick="call()">Call</button>
+    </body>
+    <script>
+        function call() {
+            let name = prompt("Enter your name!", "");  //first value for the label , 2nd value for input field default value
+            // document.write(name);
+            document.getElementById('result').innerHTML = name;
+        }
+        // let name = prompt("Enter your name!", "");  //first value for the label , 2nd value for input field default value
+        // document.write(name);
+    </script>
+
+**************************************STEP 10: JAVASCRIPT CONDITIONAL STATEMENT(IF, IF-ELSE,IF-ELSEIF)*************************************
+
+Q. 1. What are CONDITIONAL statement?
+***Conditional statements(control statements) used to change the flow of the program's execution.
+***two possible cases. either true or false.
+
+
+****TYPES OF CONDITIONAL STATEMENT IN JAVASCRIPT
+1. If (if proved true, performs the function or displays information)
+2. If-else (if proved true, performs a task, if false, performs another task)
+3. If-elsif(if proved true, performs a task, if false checks another if condition)
+
+
+****SYNTAX OF CONDITIONAL statements
+
+***If
+
+if(condition){
+    // this block of code will be executed if the condition is true
+}
+
+***If-ELSE
+
+if(condition){
+    // this block of code will be executed if the condition is true
+}else{
+     // this block of code will be executed if the condition is false
+}
+
+***If-ELSEIF
+if(condition 1){
+// this block of code will be executed if the condition is true
+}else if(condition 2){
+// this block of code will be executed if the condition 1 is false
+}else{
+// this block of code will be executed if the condition 1 and 2 are false
+}
+
+
+    <body>
+        <div style="background-color: cadetblue; margin-bottom: 20px;">
+            <h1>Checking if-else conditions</h1>
+            <h3>Check if you can vote or not</h3>
+            <input type="number" name="age" id="age">
+            <button onclick="check()">Check</button>
+            <br>
+            <input type="text" id="result" readonly>
+        </div>
+        <div style="background-color: burlywood;">
+            <input type="text" id="role">
+            <button onclick="auth()">Give your role</button>
+            <h2 id="login" style="background-color: chartreuse; color: red;">
+
+            </h2>
+        </div>
+
+    </body>
+    <script>
+        function check() {
+            let age = document.getElementById('age').value;
+            // let age = prompt("Enter your age", "");
+            // alert(age);
+            if (age >= 18 && age <= 80) {
+                document.getElementById('result').value = "You can vote!";
+                // alert('You can vote!');
+            } else {
+                document.getElementById('result').value = "You can not vote";
+                // alert('You can not vote!');
+            }
+        }
+
+        function auth() {
+            let role = document.getElementById('role').value;
+            let admin = "You are a ADMIN. You can login";
+            let user = "You are a USER. You can login";
+            if (role == 'admin') {
+                document.getElementById('login').innerHTML = admin;
+            } else if (role == 'user') {
+                document.getElementById('login').innerHTML = user;
+            } else {
+                document.getElementById('login').innerHTML = "You can not login. Register first!";
+            }
+        }
+    </script>
+
+
+
+
+
+**************************************STEP 11: ARRAY IN JAVASCRIPT*************************************
+
+Q. 1. How to define an array in javascript?
+

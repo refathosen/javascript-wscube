@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Calculator using JS</title>
+    </head>
+
+    <body>
+        <input type="number" name="first" id="first" step="any" />
+        <select name="" id="ope">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">x</option>
+            <option value="/">/</option>
+        </select>
+        <input type="number" name="second" id="second" step="any" />
+        <!-- by using any we can also input decimal numbers -->
+        <br>
+        <button onclick="cal()">Calculate</button>
+        <input type="text" id="res" readonly>
+    </body>
+
+    <script>
+        function cal() {
+            let opr1 = document.getElementById('first').value;
+            let opr2 = document.getElementById('second').value;
+            let ope = document.getElementById('ope').value;
+            // alert(opr1);
+            // alert(opr2);
+            // alert(ope);
+            if (ope == '+') {
+                var result = parseInt(opr1) + parseInt(opr2); //*** parseInt will convert the string to a integer
+            }
+            else if (ope == '-') {
+                var result = parseInt(opr1) - parseInt(opr2);
+            }
+            else if (ope == '*') {
+                var result = parseInt(opr1) * parseInt(opr2);
+            }
+            else if (ope == '/') {
+                var result = parseInt(opr1) / parseInt(opr2);
+            }
+            // alert(result);
+            document.getElementById('res').value = result;
+
+        }
+    </script>
+
+</html>
