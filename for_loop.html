@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FOR LOOP</title>
+    </head>
+
+    <body>
+        <h1 id="show">
+        </h1>
+        <button onclick="loop()">Run Loop</button>
+        <button onclick="count()">Run Count</button>
+    </body>
+    <script>
+        function loop() {
+            let result = ''; // declare the variable outside the loop | এখানে একটি খালি স্ট্রিং তৈরি করা হয়েছে, যার নাম result।
+            //আমরা এই result এর মধ্যে ধাপে ধাপে লুপের সব আউটপুট যোগ করব।
+            for (let i = 0; i <= 10; i++) {
+                result += 'Printing the loop value ' + i + '<br>'; //result += অর্থ হচ্ছে result = result + ... (মানে আগের মানের সাথে নতুন মান যোগ করা হচ্ছে)।
+                //প্রতিবার লুপে i-এর মান বদলায়, এবং এই মানটা আমরা টেক্সটের সাথে যুক্ত করছি। Printing the loop value 1 </br> Printing the loop value 2 </br>
+            }
+            document.getElementById('show').innerHTML = result;
+        }
+
+        function count() {
+            let count = '';
+            for (let count = 10; count >= 1; count--) {  //reverse counting
+                document.write(count + 'Welcome to ws cube </br>');
+            }
+            document.write('Loop ended');
+        }
+    </script>
+
+</html>

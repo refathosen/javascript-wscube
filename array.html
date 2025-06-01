@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Array In Javascript</title>
+    </head>
+
+    <body>
+
+    </body>
+    <script>
+        // var cars = []; // declaration 1
+        // cars = ["Car1", "Car2", "Car3", "Car4"];
+        // index or key [0,1,2,3,]
+
+        var cars = new Array(); // declaration 2
+        cars = ["Car1", "Car2", "Car3", "Car4"];
+        // declarations are different but initialization is the same   
+
+        // i can also put data on array by accessing index number
+        //here on number [3] index is Car4, i will replace it with Car100
+        cars[3] = 'Car100';
+
+        document.write(cars[3]); // this will return Car100
+        document.write(cars[5]); // this will return undefined, because there is no value on the 5th key
+    </script>
+
+</html>

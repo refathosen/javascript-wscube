@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Break statement</title>
+    </head>
+
+    <body>
+
+    </body>
+    <script>
+        for (i = 0; i <= 10; i++) {
+            if (i === 5) {
+                continue; // continue will skip just 5 and print 012346789
+            }
+            document.write(i + '<br>');
+        }
+        document.write('<hr>');
+        for (i = 0; i < 10; i++) {
+            if (i === 6) {
+                break;
+            }
+            document.write(i + '<br>'); // it will print from 0 to 5. then the loop will break or finish or will not run 
+        }
+    </script>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Continue statement</title>
+    </head>
+
+    <body>
+
+    </body>
+    <script>
+        // for (i = 0; i <= 10; i++) {
+        //     if (i === 5 || i === 6) {
+        //         continue; // যদি i = 5 or i = 6 হয়, তাহলে বাকি কোড স্কিপ করে পরবর্তী ইটারেশনে যাবে, it will return 01234789
+        //     }
+        //     document.write(i + "<br>");
+        // }
+
+
+        // FOR LOOP
+        // for (i = 0; i <= 10; i++) {
+        //     if (i % 2 === 0) {
+        //         continue;
+        //     }
+        //     document.write(i + '<br>');     //it will return odd numbers
+        // }
+
+        // WHILE LOOP
+        let i = 0;
+        while (i <= 10) {
+            if (i % 2 !== 0) {
+                i++;        //continue করার আগে i না বাড়ালে লুপ আটকে যাবে
+                continue;
+            }
+            document.write(i + '<br>');
+            i++;
+        }
+
+    </script>
+
+</html>

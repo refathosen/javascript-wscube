@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>While Loop</title>
+    </head>
+
+    <body>
+        <div id="res">
+
+        </div>
+        <button onclick="result()">Show result</button>
+    </body>
+    <script>
+        function result() {
+            // WHILE LOOP
+            let score = 0;  // initialize the while loop outside the body
+            let output = ''; // *** Always define the variable outside the loop ***
+            while (score < 100) {
+                output += "Hello World! " + score + '<br>';
+                document.getElementById('res').innerHTML = output;
+                score++; // place increment/decrement inside the loop body
+            }
+        }
+    </script>
+
+</html>

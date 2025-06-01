@@ -556,3 +556,271 @@ if(condition 1){
 
 Q. 1. How to define an array in javascript?
 
+
+Q. 2. What is an array?
+i. array is a group of continuous memory locations.
+ii. it is used to store multiple values in a single variable.
+
+
+
+********************************DECLARATIONS OF AN ARRAY IN JAVASCRIPT****************************
+
+first declare the array:
+var house = [];
+
+no initialize:
+***METHOD 1:
+// Initializing while declaring
+var house = [10,20,30,40,50];
+
+//index starts with 0,1,2,3,4,5,...........
+// Initializing after declaring===============> index or key => value pair 
+house[0] = 10; //here [0] 0 is the key and 10 is the value
+house[1] = 20;  //here [1] 1 is the key and 20 is hte value
+house[2] = 30;  //here [2] 2 is the key and 30 in the value
+
+
+***METHOD 2:
+var house = new Array(10,20,30,40,50);
+
+
+// Storing NUmbers and Strings in an ARRAY
+var house = ["1BHK",30000,"2BHK",40000,"Sales"];
+
+
+
+<script>
+    // var cars = []; // declaration 1
+    // cars = ["Car1", "Car2", "Car3", "Car4"];
+    // index or key [0,1,2,3,]
+
+    var cars = new Array(); // declaration 2
+    cars = ["Car1", "Car2", "Car3", "Car4"];
+    // declarations are different but initialization is the same   
+
+    // i can also put data on array by accessing index number
+    //here on number [3] index is Car4, i will replace it with Car100
+    cars[3] = 'Car100';
+
+    document.write(cars[3]); // this will return Car100
+    document.write(cars[5]); // this will return undefined, because there is no value on the 5th key
+</script>
+
+
+
+********************************************STEP 12 :: JAVASCRIPT LOOPING STATEMENTS**********************************
+
+Q. 1. What is a LOOP?
+i. Loop in used to repeat a block of code until the specified condition is meet.
+ii. While similar task is needed to be done again and again
+iii. Save time and leads to code reusability
+
+
+***************FOR LOOP*************
+
+FOR LOOP lifecycle:
+Start -> 
+Initialization -> 
+Condition Checking -> 
+If true[If false -> end] -> 
+Statement -> 
+Increment/Decrement ->
+Condition Checking ->
+If true -> Statement[If false -> end]
+
+
+FOR LOOP IN JAVASCRIPT:
+
+SYNTAX::
+for(initialization; test condition ; increment/decrement){
+    //statement will executed if the condition is true
+}
+
+example:
+let count = '';
+for(let count = 0; count <= 5; count++){
+    document.write(count + 'Welcome to ws cube </br>');
+}
+
+
+<body>
+<h1 id="show">
+</h1>
+<button onclick="loop()">Run Loop</button>
+<button onclick="count()">Run Count</button>
+</body>
+<script>
+function loop() {
+let result = ''; // declare the variable outside the loop | এখানে একটি খালি স্ট্রিং তৈরি করা হয়েছে, যার নাম result।
+//আমরা এই result এর মধ্যে ধাপে ধাপে লুপের সব আউটপুট যোগ করব।
+for (let i = 0; i <= 10; i++) {
+result += 'Printing the loop value ' + i + '<br>'; //result += অর্থ হচ্ছে result = result + ... (মানে আগের মানের সাথে নতুন মান যোগ করা হচ্ছে)।
+//প্রতিবার লুপে i-এর মান বদলায়, এবং এই মানটা আমরা টেক্সটের সাথে যুক্ত করছি। Printing the loop value 1 </br> Printing the loop value 2 </br>
+}
+document.getElementById('show').innerHTML = result;
+}
+
+function count() {
+let count = '';
+for (let count = 0; count <= 5; count++) {
+document.write(count + 'Welcome to ws cube </br>');
+}
+}
+</script>
+
+
+
+***************************WHILE LOOP**************************
+Q. 1. WHAT IS WHILE LOOP?
+i. a while loop is to execute a statement or code block repeatedly as long as condition is true
+ii. once the condition becomes false, the loop terminates
+iii. it is also called entry control loop
+
+*** start initialization outside the body in while loop
+
+
+WHILE LOOP lifecycle::
+
+while loop ->
+condition ->[if false -> outside while loop]
+if true -> 
+statements in side loop ->
+condition
+
+
+SYNTAX OF WHILE LOOP::
+
+while(condition){
+    //statements will executed if the 
+    //condition is true 
+    increment/ decrement
+}
+
+Example::
+
+let count = 0; // initialize outside loop body
+
+while(count < 10){
+    document.write(count + 'WSCUbe <br>');
+    count++; 
+}
+
+
+***************************DO WHILE LOOP**************************
+do...while একটি loop (লুপ) যা কমপক্ষে একবার কোড চালিয়েই তারপর শর্ত চেক করে।
+অর্থাৎ, প্রথমে কাজ করে, তারপর দেখে শর্ত মিলে কিনা।
+
+***SYNTAX:
+
+initialization
+do{
+   // statements
+   incre/decre
+}while(condition)
+
+example::
+let i = 0;
+
+do{
+    console.log(i);
+    i++;
+}while(i < 10);
+
+
+***************************FOR EACH LOOP**************************
+Q. 1. WHAT IS FOR EACH LOOP?
+i. A forEach loop(method) is used to get data from JS array or object.
+ii. The method calls a function for once for each element in an array, in order.
+JavaScript-এর forEach() একটি Array method যা একটি অ্যারেতে থাকা প্রতিটি উপাদানের উপর একটি নির্দিষ্ট ফাংশন চালায়। 
+
+SYNTAX OF FOREACH LOOP:
+array.forEach(function(element, index, array) {
+  // এখানে কোড লিখবে
+});
+
+var cars = ["car1","car2","car3","car4"];
+
+cars.forEach(myFunction);
+
+function myFunction(item, index, array){        //forEach() ফাংশন প্রতি একবার করে চলে, এবং প্রতিবার চলে যাওয়ার সময় অ্যারের একটি করে উপাদান পাঠায়। প্রতিবার যে উপাদানটি পাঠানো হয়, সেটাই item নামে ধরা হয়েছে।
+    body of the function 
+}
+
+item = (here "car1" ) required parameter
+index = (here 0 for "car1") optional
+array = (here cars) optional
+
+
+**********new version of how to write array in javascript:
+
+array.forEach(function(item){
+    console.log(item);
+});
+
+
+
+********************************************STEP 13 :: JAVASCRIPT CONTINUE STATEMENT**********************************
+
+1. What is continue statement?
+The continue statement is used to skip the current iteration and go to the next iteration.
+
+syntax:
+continue // it is also a keyword
+
+for(initialization; condition; incre/decre){
+    if (some condition){
+        continue;
+    }
+}
+
+
+********************************************STEP 14 :: JAVASCRIPT BREAK STATEMENT**********************************
+// the break statement is used to break the execution of current loop or switch case.
+// break statement will break the whole loop and came outside the loop.
+// as soon as it is encountered the flow of the program goes to next statement of loop or switch case.
+
+SYNTAX::
+break;
+
+exmple:
+for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+        break;
+    }
+    console.log(i);
+}
+
+i শুরুতে 0, তারপর 1, 2, 3, 4...
+
+যখন i === 5 → break চলে যাবে → লুপ একদম বন্ধ হয়ে যাবে।
+
+তাই শুধু 0 থেকে 4 পর্যন্ত সংখ্যা প্রিন্ট হবে।
+
+
+
+********************************************STEP 15 :: JAVASCRIPT SWITCH CASE**********************************
+
+Switch statement is used to choose in between many cases.
+
+switch একটি কন্ডিশনাল স্টেটমেন্ট যা তখন ব্যবহার করি, যখন একটি ভ্যারিয়েবলের একাধিক মানের মধ্যে 
+মিল খুঁজে নির্দিষ্ট কাজ করতে চাই।
+
+👉 অনেকগুলো if...else if লিখার বদলে switch ব্যবহার করলে কোড সুন্দর ও পরিষ্কার হয়।
+
+// it works same as if-elseif-else statement 
+
+SWITCH CASE SYNTAX::
+switch(x)
+{
+    case 'value1':
+        statement 1;
+        break;
+    case 'value2':
+        statement 2;
+        break;
+    default:
+        statementDefault;
+        break;
+}
+
+example:
